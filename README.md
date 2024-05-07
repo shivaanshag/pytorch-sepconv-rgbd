@@ -1,7 +1,7 @@
 # pytorch-sepconv-rgbd
 This is a reference implementation of Video Frame Interpolation via Adaptive Separable Convolution [1] using PyTorch. Given two frames, it will make use of [adaptive convolution](http://graphics.cs.pdx.edu/project/adaconv) [2] in a separable manner to interpolate the intermediate frame. Should you be making use of the work, please cite the paper [1].
 
-This is a modified version of [original code](github.com/HyeongminLEE/pytorch-sepconv) which is in turn modified from this version [original code](https://github.com/sniklaus/pytorch-sepconv).
+This is a modified version of [modified code](github.com/HyeongminLEE/pytorch-sepconv) which is in turn modified from this version [original code](https://github.com/sniklaus/pytorch-sepconv).
 
 <a href="https://arxiv.org/abs/1708.01692" rel="Paper"><img src="http://content.sniklaus.com/sepconv/paper.jpg" alt="Paper" width="100%"></a>
 
@@ -22,8 +22,7 @@ The training dataset is not provided. We prepared training dataset by cropping [
 
 ## Train
 ```
-python train.py --train ./inside/rgbd/dataset
---out_dir ./output/folder/tobe/created --kernel <int_kernel_size> --epochs <num_epochs>
+python train.py --train ./inside/rgbd/dataset --out_dir ./output/folder/tobe/created --kernel <int_kernel_size> --epochs <num_epochs>
 ```
 
 ## Test
@@ -41,12 +40,12 @@ python psnr.py --psnr_files ./test/input/of/rgbd/data --batch_size <low_batch_si
 ```
 
 ## video
-<a href="https://cometmail-my.sharepoint.com/:v:/r/personal/sxa220028_utdallas_edu/Documents/vfi_rgbd_output.mp4?csf=1&web=1&e=KDF9sW&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" rel="Video"><img src="http://web.cecs.pdx.edu/~fliu/project/sepconv/screen.jpg" alt="Video (will expire in 2025)" width="100%"></a>
+<a href="https://cometmail-my.sharepoint.com/:v:/r/personal/sxa220028_utdallas_edu/Documents/vfi_rgbd_output.mp4?csf=1&web=1&e=KDF9sW&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" rel="Video"><img src="" alt="Video (will expire in 2025)" width="100%"></a>
 
-## license
+## License
 The provided implementation is strictly for academic purposes only. Should you be interested in using our technology for any commercial use, please feel free to contact us.
 
-## references
+## References
 ```
 [1]  @inproceedings{Niklaus_ICCV_2017,
          author = {Simon Niklaus and Long Mai and Feng Liu},
@@ -70,4 +69,4 @@ Due to time constraints, code refactoring, input arguments, and cleanup was not 
 Non-exhaustive list of remaining work:
 1. Modify Dataset to accept rgbd data in other formats. Currently it can only accept split depth and rgb videos with a specific data structures.
 2. Extensive code documentation and improvement of this readme to include more optional arguments.
-3. 
+3. Find a way to write video directly without JPEG compression as an intermediate step as it reduces quality.
